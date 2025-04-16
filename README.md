@@ -1,1 +1,2 @@
 # Drum_kit
+This is a simple interactive Drum Kit web application built using HTML, CSS, and JavaScript. Users can click on the buttons labeled with different characters (w, a, s, d, j, k, l) to play different drum sounds. Each button triggers a unique sound effect like toms, snare, kick, or crash, simulating a virtual drum set. The app also adds a fun and engaging way to explore basic DOM manipulation and event handling in JavaScript.
