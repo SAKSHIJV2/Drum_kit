@@ -1,10 +1,23 @@
+//detection using clicking
 var number=document.querySelectorAll(".drum").length;
 for(var i=0;i<number;i++){
-    
+    var buttonInnerHTML=this.innerHTML;
     document.querySelectorAll(".drum")[i].addEventListener("click",function (){
-        
         var buttonInnerHTML = this.innerHTML;
-        switch(buttonInnerHTML){
+        makeSound(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
+
+    });
+    
+}  
+
+//detectin using keypress of keyboard
+document.addEventListener("keypress",function(event){
+    makeSound(event.key);
+    buttonAnimation(event.key);
+})
+function makeSound(key){
+        switch(key){
             case "w":
                 var audio=new Audio("sounds/tom-1.mp3");
                 audio.play();
@@ -34,7 +47,12 @@ for(var i=0;i<number;i++){
                 audio.play();
             break;
         }
+}
 
-    });
-    
+function buttonAnimation(currentKey){
+    var activeButton=document.querySelector("."+currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function (){
+        activeButton.classList.remove("pressed");
+    },200);
 }
